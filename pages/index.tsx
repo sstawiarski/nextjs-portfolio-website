@@ -1,9 +1,10 @@
-import { InferGetStaticPropsType } from 'next';
-import ProfileCard from '../components/ProfileCard/ProfileCard';
-import Header from '../components/Header';
-import { ProjectList } from '../components/ProjectCard';
-import { getOrCreateConnection } from '../utils/index';
-import { Project } from '../models';
+import { getConnection, createConnection } from "typeorm";
+import { InferGetStaticPropsType } from "next";
+import ProfileCard from "../components/ProfileCard/ProfileCard";
+import Header from "../components/Header";
+import { ProjectList } from "../components/ProjectCard";
+
+import { Project, Technical } from "../models";
 
 const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
@@ -19,22 +20,40 @@ const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
 
 export const getStaticProps = async () => {
     const conn = await getOrCreateConnection();
-    const projectRepo = conn.getRepository<Project>('project');
+    const projectRepo = conn.getRepository<Project>("project");
 
     let localProjects: any[] = [];
     try {
         localProjects = await projectRepo
-            .createQueryBuilder('project')
+            .createQueryBuilder("project")
             .leftJoinAndSelect("project.technical", "t")
             .getMany();
-
     } catch (err) {}
 
     return {
         props: {
-            projects: localProjects.map((item: any) => JSON.parse(JSON.stringify(item)) as Project)
+            projects: localProjects.map((item: any) => JSON.parse(JSON.stringify(item)) as Project),
         },
     };
 };
 
 export default Home;
+
+async function getOrCreateConnection() {
+    try {
+        const conn = getConnection();
+        return conn;
+    } catch (e) {
+        return createConnection({
+            type: "postgres",
+            host: process.env.POSTGRES_HOST as string,
+            port: parseInt(process.env.POSTGRES_PORT as string),
+            username: process.env.POSTGRES_USER as string,
+            password: process.env.POSTGRES_PASSWORD as string,
+            database: process.env.POSTGRES_DB as string,
+            entities: [Project, Technical],
+            synchronize: true,
+            logging: false,
+        });
+    }
+}

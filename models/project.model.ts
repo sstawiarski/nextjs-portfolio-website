@@ -1,5 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from "typeorm";
-import { Technical } from './technical.model'
+import { Technical } from './'
 
 @Entity("project")
 export class Project {

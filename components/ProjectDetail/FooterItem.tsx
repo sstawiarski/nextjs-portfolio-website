@@ -1,6 +1,7 @@
 import React from "react";
 import { FooterItemProps } from "../../@types";
-import { getIcon } from "../../utils";
+
+import JavaIcon from '../../public/icons/java.svg'
 
 const FooterItem: React.FC<FooterItemProps> = ({ text = "", icon = "", additional = "" }) => {
     const Icon = getIcon(icon);
@@ -22,3 +23,12 @@ const FooterItem: React.FC<FooterItemProps> = ({ text = "", icon = "", additiona
 };
 
 export default FooterItem;
+
+function getIcon(type: string): React.FunctionComponent<React.SVGAttributes<SVGElement>> {
+    switch (type) {
+        case "Java":
+            return JavaIcon;
+        default:
+            return null;
+    }
+}

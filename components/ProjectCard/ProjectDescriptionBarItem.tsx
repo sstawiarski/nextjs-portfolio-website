@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { ProjectDescriptionBarItemTypes } from '../../types/ProjectCard';
-import { getIcon } from '../../utils'
+
+import JavaIcon from '../../public/icons/java.svg'
 
 const ProjectDescriptionBar: FC<ProjectDescriptionBarItemTypes> = ({ icon, text = null }) => {
     const Icon = getIcon(icon);
@@ -13,3 +14,13 @@ const ProjectDescriptionBar: FC<ProjectDescriptionBarItemTypes> = ({ icon, text 
 };
 
 export default ProjectDescriptionBar;
+
+
+function getIcon(type: string): React.FunctionComponent<React.SVGAttributes<SVGElement>> {
+    switch (type) {
+        case "Java":
+            return JavaIcon;
+        default:
+            return null;
+    }
+}

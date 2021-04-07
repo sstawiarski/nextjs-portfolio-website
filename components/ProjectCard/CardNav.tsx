@@ -1,4 +1,4 @@
-import { FC, useState, useEffect } from 'react';
+import { FC } from 'react';
 
 import { CardNavTypes } from '../../types/ProjectCard/index';
 

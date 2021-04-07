@@ -5,7 +5,7 @@ import { ProjectDescriptionBarItemTypes, ProjectListTypes } from '../../types/Pr
 import { CardNav, CardNavItem, ProjectCard } from './index';
 import ProjectDescriptionBar from './ProjectDescriptionBar';
 import ProjectDescriptionBarItem from './ProjectDescriptionBarItem';
-import { Project } from '../../models/project.model';
+import { Project } from '../../models';
 
 const ProjectList: FC<ProjectListTypes> = ({
     children = null,
