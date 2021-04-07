@@ -1,7 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import Navbar from '../components/Navbar/Navbar';
-
 class MyDocument extends Document {
     static async getInitialProps(ctx: any) {
         const initialProps = await Document.getInitialProps(ctx);
@@ -22,8 +20,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                 </Head>
-                <body className="max-w-screen-2xl mr-auto ml-auto">
-                    <Navbar Logo={null} link="/" />
+                <body>
                     <Main />
                     <NextScript />
                 </body>

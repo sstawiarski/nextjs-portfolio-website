@@ -17,7 +17,7 @@ const ProjectDetails = ({ project }: InferGetStaticPropsType<typeof getStaticPro
             {project?.bullets && <Subsection header="Features" content={project.bullets} bulleted />}
             {project?.screenshots && <Subsection header="Screenshots" content={project.screenshots} screenshots />}
             <ProfileFooter header="Technical Info">
-                {project?.technical.map((tech, idx) => (
+                {project?.technical?.map((tech, idx) => (
                     <FooterItem key={idx} text={tech?.title || tech.type} icon={tech.type} additional={tech?.additional} />
                 ))}
             </ProfileFooter>
@@ -32,14 +32,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const conn = await getOrCreateConnection();
     const projectRepo = conn.getRepository<Project>("project");
 
-    let localProjects: any[] = [];
+    let localProjects: Project[];
     try {
-        localProjects = await projectRepo.createQueryBuilder("project").select(["project_id"]).getMany();
+        localProjects = await projectRepo.find({ select: ['project_id'] });
     } catch (err) {}
 
-    const paths = localProjects.map((item: any) => ({
-        params: { id: JSON.parse(JSON.stringify(item))["project_id"]?.toString() },
+    const paths = localProjects.map((item: Project) => ({
+        params: { id: item?.project_id.toString() },
     }));
+
     return { paths, fallback: false };
 };
 
@@ -48,18 +49,18 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
     const conn = await getOrCreateConnection();
     const projectRepo = conn.getRepository<Project>("project");
 
-    let localProjects: any[] = [];
+    let localProjects: Project;
     try {
         localProjects = await projectRepo
             .createQueryBuilder("project")
             .leftJoinAndSelect("project.technical", "tech")
             .where("project.project_id = :id", { id: params.id })
-            .getMany();
+            .getOne();
     } catch (err) {}
 
     return {
         props: {
-            project: (localProjects.map((item: any) => JSON.parse(JSON.stringify(item)) as Project) || [])[0],
+            project: JSON.parse(JSON.stringify(localProjects)) as Project
         },
     };
 };
