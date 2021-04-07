@@ -1,5 +1,8 @@
-import { Project } from "../models/project.model";
+import { Project, Technical } from "../models";
+
 import { getConnection, createConnection } from "typeorm";
+
+import JavaIcon from '../public/icons/java.svg';
 
 export async function getOrCreateConnection() {
   try {
@@ -13,9 +16,18 @@ export async function getOrCreateConnection() {
       username: process.env.POSTGRES_USER as string,
       password: process.env.POSTGRES_PASSWORD as string,
       database: process.env.POSTGRES_DB as string,
-      entities: [Project],
+      entities: [Project, Technical],
       synchronize: true,
       logging: false
     });
   }
+}
+
+export function getIcon(type: string): React.FunctionComponent<React.SVGAttributes<SVGElement>> {
+    switch (type) {
+        case "Java":
+            return JavaIcon;
+        default:
+            return null;
+    }
 }

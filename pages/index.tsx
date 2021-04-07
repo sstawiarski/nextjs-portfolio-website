@@ -1,11 +1,11 @@
-import { InferGetServerSidePropsType } from 'next';
+import { InferGetStaticPropsType } from 'next';
 import ProfileCard from '../components/ProfileCard/ProfileCard';
 import Header from '../components/Header';
 import { ProjectList } from '../components/ProjectCard';
 import { getOrCreateConnection } from '../utils/index';
-import { Project } from '../models/project.model';
+import { Project } from '../models';
 
-const Home = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <div className="flex xl:flex-row flex-col w-full justify-between">
             <ProfileCard className="ml-auto mr-auto mt-5 xl:ml-32 xl:mt-32 xl:mr-10" />
@@ -17,21 +17,22 @@ const Home = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProp
     );
 };
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
     const conn = await getOrCreateConnection();
-    const projectRepo = conn.getRepository<Project>('Project');
+    const projectRepo = conn.getRepository<Project>('project');
 
     let localProjects: any[] = [];
     try {
         localProjects = await projectRepo
             .createQueryBuilder('project')
-            .select(['project_id', 'project_name', 'description', 'project_type', 'is_featured'])
-            .execute();
+            .leftJoinAndSelect("project.technical", "t")
+            .getMany();
+
     } catch (err) {}
 
     return {
         props: {
-            projects: localProjects.map((item: any) => JSON.parse(JSON.stringify(item)) as Project),
+            projects: localProjects.map((item: any) => JSON.parse(JSON.stringify(item)) as Project)
         },
     };
 };

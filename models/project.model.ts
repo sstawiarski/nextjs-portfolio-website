@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn } from "typeorm";
+import { Technical } from './technical.model'
 
 @Entity("project")
 export class Project {
@@ -28,4 +29,19 @@ export class Project {
         nullable: true
     })
     long_description: string;
+
+    @Column("text", {
+        nullable: true,
+        array: true
+    })
+    bullets: string[];
+
+    @Column("text", {
+        nullable: true,
+        array: true
+    })
+    screenshots: string[];
+
+    @OneToMany(() => Technical, technical => technical.project)
+    technical: Technical[];
 }

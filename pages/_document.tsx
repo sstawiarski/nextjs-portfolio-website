@@ -22,7 +22,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                 </Head>
-                <body>
+                <body className="max-w-screen-2xl mr-auto ml-auto">
                     <Navbar Logo={null} link="/" />
                     <Main />
                     <NextScript />
