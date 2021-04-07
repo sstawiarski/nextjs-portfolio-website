@@ -1,3 +1,4 @@
+import React from "react";
 import { FooterItemProps } from "../../@types";
 import { getIcon } from "../../utils";
 
@@ -11,10 +12,10 @@ const FooterItem: React.FC<FooterItemProps> = ({ text = "", icon = "", additiona
             </div>
             <div className="flex-grow" />
 
-            {additional.split("\\n").map((item) => (
-                <>
+            {additional.split("\\n").map((item, idx) => (
+                <React.Fragment key={idx}>
                     <span className="font-light">{item}</span> <br />
-                </>
+                </React.Fragment>
             ))}
         </div>
     );
