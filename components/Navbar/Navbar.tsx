@@ -27,7 +27,7 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
     return (
         <nav className={mainClasses}>
             <Link href="/">
-                <a className="w-64 fill-current text-white p-2 font-mono text-lg">
+                <a className="fill-current text-white -ml-4 sm:ml0 py-2 font-mono text-xs sm:text-base md:text-lg">
                     {" "}
                     {"{"} Shawn Stawiarski {"}"}
                 </a>
@@ -37,7 +37,7 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
             <span className="text-white hidden md:block">hi</span>
             <span className="text-white hidden md:block">hi</span>
             <span className="text-white hidden md:block">hi</span>
-            <span className="text-white block md:hidden">Expand</span>
+            <span className="text-white block ml-5 pt-0.5 md:hidden">Expand</span>
 
             {children && children}
         </nav>

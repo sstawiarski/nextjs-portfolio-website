@@ -12,7 +12,7 @@ const ProjectDetails = ({ project }: InferGetStaticPropsType<typeof getStaticPro
     return (
         <div className="shadow w-3/4 rounded mr-auto ml-auto p-4 mt-10">
             <h1 className="text-xl mb-5 font-bold">{project?.project_name}</h1>
-            <p className="text-base -mt-6 text-black text-opacity-50">{project?.description}</p>
+            <p className="text-base text-center md:text-left -mt-6 text-black text-opacity-50">{project?.description}</p>
             {project?.long_description && <Subsection header="Description" content={project.long_description} />}
             {project?.bullets && <Subsection header="Features" content={project.bullets} bulleted />}
             {project?.screenshots && <Subsection header="Screenshots" content={project.screenshots} screenshots />}

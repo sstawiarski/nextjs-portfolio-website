@@ -7,7 +7,7 @@ const FooterItem: React.FC<FooterItemProps> = ({ text = "", icon = "", additiona
     const Icon = getIcon(icon);
     return (
         <div className="flex flex-col">
-            <div className="flex flex-row mr-auto ml-auto">
+            <div className="flex flex-row mr-auto ml-auto pr-3">
                 <Icon className="w-7 h-7 fill-current mx-3" />
                 <span className="font-normal text-lg mt-1">{text}</span>
             </div>
