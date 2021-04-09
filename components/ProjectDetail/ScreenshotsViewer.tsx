@@ -28,6 +28,7 @@ const ScreenshotsViewer: React.FC<ScreenshotsViewerProps> = ({ links = [] }) => 
                                         layout="fill"
                                         objectFit="cover"
                                         className="rounded"
+                                        alt="Screenshot of a computer program"
                                     />
                                 </div>
                             );

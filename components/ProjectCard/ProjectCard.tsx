@@ -16,7 +16,7 @@ const ProjectCard: FC<ProjectCardTypes> = ({ name, link = false, description = n
     });
     return (
         <article className={mainClasses}>
-            <Link href={`/projects/${id}`} prefetch>
+            <Link href={`/projects/${id}`}>
                 <a>
                     <section className={divClassnames}>
                         <h1 className="text-xl">{name}</h1>

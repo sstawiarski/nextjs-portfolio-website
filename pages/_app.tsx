@@ -12,6 +12,7 @@ const App: FC<AppProps> = ({ Component, pageProps }: AppProps) => (
         </Head>
         <div className="max-w-screen-2xl mr-auto ml-auto">
             <Navbar Logo={null} link="/" />
+            <hr className="mt-1 sm:mt-3 mb-2 w-10/12 ml-auto mr-auto" />
             <Component {...pageProps} />
         </div>
     </>
