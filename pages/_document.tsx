@@ -8,15 +8,12 @@ class MyDocument extends Document {
 
     render() {
         return (
-            <Html>
+            <Html lang="en">
                 <Head>
                     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                     <link
                         href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
                         rel="stylesheet"
-                        media="print"
-                        // @ts-ignore
-                        onload="this.media='all'"
                     />
                     <link
                         href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap"

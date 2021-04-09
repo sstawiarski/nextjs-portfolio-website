@@ -10,18 +10,27 @@ type Props = {
 
 const ProjectDetails = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
-        <div className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10">
-            <h1 className="text-xl mb-5 font-bold">{project?.project_name}</h1>
-            <p className="text-base text-center md:text-left -mt-6 text-black text-opacity-50">{project?.description}</p>
+        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10">
+            <header>
+                <h1 className="text-xl mb-5 font-bold">{project?.project_name}</h1>
+                <p className="text-base text-center md:text-left -mt-6 text-black text-opacity-50">
+                    {project?.description}
+                </p>
+            </header>
             {project?.long_description && <Subsection header="Description" content={project.long_description} />}
             {project?.bullets && <Subsection header="Features" content={project.bullets} bulleted />}
             {project?.screenshots && <Subsection header="Screenshots" content={project.screenshots} screenshots />}
             <ProfileFooter header="Technical Info">
                 {project?.technical?.map((tech, idx) => (
-                    <FooterItem key={idx} text={tech?.title || tech.type} icon={tech.type} additional={tech?.additional} />
+                    <FooterItem
+                        key={idx}
+                        text={tech?.title || tech.type}
+                        icon={tech.type}
+                        additional={tech?.additional}
+                    />
                 ))}
             </ProfileFooter>
-        </div>
+        </article>
     );
 };
 
@@ -34,7 +43,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     let localProjects: Project[];
     try {
-        localProjects = await projectRepo.find({ select: ['project_id'] });
+        localProjects = await projectRepo.find({ select: ["project_id"] });
     } catch (err) {}
 
     const paths = localProjects.map((item: Project) => ({
@@ -60,26 +69,26 @@ export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
 
     return {
         props: {
-            project: JSON.parse(JSON.stringify(localProjects)) as Project
+            project: JSON.parse(JSON.stringify(localProjects)) as Project,
         },
     };
 };
 
 async function getOrCreateConnection() {
     try {
-      const conn = getConnection();
-      return conn;
+        const conn = getConnection();
+        return conn;
     } catch (e) {
-      return createConnection({
-        type: "postgres",
-        host: process.env.POSTGRES_HOST as string,
-        port: parseInt(process.env.POSTGRES_PORT as string),
-        username: process.env.POSTGRES_USER as string,
-        password: process.env.POSTGRES_PASSWORD as string,
-        database: process.env.POSTGRES_DB as string,
-        entities: [Project, Technical],
-        synchronize: true,
-        logging: false
-      });
+        return createConnection({
+            type: "postgres",
+            host: process.env.POSTGRES_HOST as string,
+            port: parseInt(process.env.POSTGRES_PORT as string),
+            username: process.env.POSTGRES_USER as string,
+            password: process.env.POSTGRES_PASSWORD as string,
+            database: process.env.POSTGRES_DB as string,
+            entities: [Project, Technical],
+            synchronize: true,
+            logging: false,
+        });
     }
-  }
+}

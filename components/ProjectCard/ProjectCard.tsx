@@ -20,11 +20,11 @@ const ProjectCard: FC<ProjectCardTypes> = ({ name, link = false, description = n
                 <a>
                     <section className={divClassnames}>
                         <h1 className="text-xl">{name}</h1>
-                        {description && <span className="text-base text-black text-opacity-60">{description}</span>}
+                        {description && <span className="text-base text-black text-opacity-70">{description}</span>}
                     </section>
                 </a>
             </Link>
-            {children && <section className="text-sm text-black text-opacity-40">{children}</section>}
+            {children && <section className="text-sm text-black text-opacity-50">{children}</section>}
         </article>
     );
 };

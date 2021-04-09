@@ -42,19 +42,19 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
             </Link>
 
             <Link href="/">
-                <a>
+                <a aria-label="Home">
                     <span className="text-black hidden md:block">Home</span>
                 </a>
             </Link>
 
             <Link href="/">
-                <a>
+                <a aria-label="Resume">
                     <span className="text-black hidden md:block">Resume</span>
                 </a>
             </Link>
 
             <Link href="/">
-                <a>
+                <a aria-label="Contact">
                     <span className="text-black hidden md:block">Contact</span>
                 </a>
             </Link>
@@ -64,19 +64,19 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
             </div>
             <div className={["transition-all", hamburgerOpen ? "block pt-5" : "hidden", "w-full", "text-center"].join(" ")}>
                 <Link href="/">
-                    <a>
+                    <a aria-label="Home">
                         <span className="text-black block md:hidden py-1">Home</span>
                     </a>
                 </Link>
                 <hr className="w-full ml-auto mr-auto" />
                 <Link href="/">
-                    <a>
+                    <a aria-label="Resume">
                         <span className="text-black block md:hidden py-1">Resume</span>
                     </a>
                 </Link>
                 <hr className="w-full ml-auto mr-auto" />
                 <Link href="/">
-                    <a>
+                    <a aria-label="Contact">
                         <span className="text-black block md:hidden py-1">Contact</span>
                     </a>
                 </Link>

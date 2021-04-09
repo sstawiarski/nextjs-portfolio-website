@@ -37,7 +37,7 @@ const ProfileCard = ({ children, className }: ProfileCardProps) => {
     );
 
     return (
-        <div className={mainClasses}>
+        <aside className={mainClasses}>
             <ProfilePicture source="/images/profile.jpeg" />
             <div className="sm:mr-0 ml-10 md:ml-0">
                 <ProfileHeader header="Shawn Stawiarski" subtitle="Software Engineer" />
@@ -54,7 +54,7 @@ const ProfileCard = ({ children, className }: ProfileCardProps) => {
             </div>
 
             {children && children}
-        </div>
+        </aside>
     );
 };
 
