@@ -35,7 +35,7 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
     return (
         <nav className={mainClasses}>
             <Link href="/">
-                <a className="fill-current text-black -ml-4 sm:ml-0 py-2 font-mono font-semibold text-sm sm:text-base md:text-lg">
+                <a className="fill-current text-black py-2 font-mono font-semibold text-base md:text-lg">
                     {" "}
                     {"{"} Shawn Stawiarski {"}"}
                 </a>
