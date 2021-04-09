@@ -15,7 +15,8 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
 
     const mainClasses = classnames(
         [
-            "w-10/12",
+            "w-full",
+            "md:w-10/12",
             "flex",
             "justify-around",
             "items-center",
