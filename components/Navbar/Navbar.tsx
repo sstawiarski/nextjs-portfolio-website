@@ -47,7 +47,7 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
                 </a>
             </Link>
 
-            <Link href="/">
+            <Link href="/resume">
                 <a aria-label="Resume">
                     <span className="text-black hidden md:block">Resume</span>
                 </a>
@@ -69,7 +69,7 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
                     </a>
                 </Link>
                 <hr className="w-full ml-auto mr-auto" />
-                <Link href="/">
+                <Link href="/resume">
                     <a aria-label="Resume">
                         <span className="text-black block md:hidden py-1">Resume</span>
                     </a>
