@@ -30,6 +30,7 @@ const ProfileCard = ({ children, className }: ProfileCardProps) => {
             'xl:flex-col',
             'flex-wrap',
             'justify-evenly',
+            'dark:bg-gray-700'
         ],
         {
             [className]: Boolean(className),

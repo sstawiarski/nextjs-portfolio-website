@@ -10,10 +10,10 @@ type Props = {
 
 const ProjectDetails = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
-        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10">
+        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10 dark:bg-gray-700">
             <header>
                 <h1 className="text-xl mb-5 font-bold">{project?.project_name}</h1>
-                <p className="text-base text-center md:text-left -mt-6 text-black text-opacity-50">
+                <p className="text-base text-center md:text-left -mt-6 text-black dark:text-current text-opacity-50">
                     {project?.description}
                 </p>
             </header>

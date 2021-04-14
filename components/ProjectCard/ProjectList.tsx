@@ -18,7 +18,7 @@ const ProjectList: FC<ProjectListTypes> = ({
     const [selected, setSelected] = useState<string>(defaultSelection);
     const [displayedProjects, setDisplayedProjects] = useState<Project[]>([]);
 
-    const mainClasses = classnames(['rounded-md', 'shadow', 'w-full', 'xl:w-10/12'], {
+    const mainClasses = classnames(['rounded-md', 'shadow', 'w-full', 'xl:w-10/12', 'dark:bg-gray-700'], {
         'divide-y': divide,
     });
 

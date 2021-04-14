@@ -12,7 +12,7 @@ const ProjectCard: FC<ProjectCardTypes> = ({ name, link = false, description = n
     const divClassnames = classnames(["rounded-md", "p-4", "transition", "w-full"], {
         "cursor-pointer": Boolean(link),
         "cursor-default": !Boolean(link),
-        "hover:bg-gray-100": Boolean(link),
+        "hover:bg-gray-400 dark:hover:bg-gray-800": Boolean(link),
     });
     return (
         <article className={mainClasses}>
@@ -20,11 +20,11 @@ const ProjectCard: FC<ProjectCardTypes> = ({ name, link = false, description = n
                 <a>
                     <section className={divClassnames}>
                         <h1 className="text-xl">{name}</h1>
-                        {description && <span className="text-base text-black text-opacity-70">{description}</span>}
+                        {description && <span className="text-base text-black dark:text-current text-opacity-70">{description}</span>}
                     </section>
                 </a>
             </Link>
-            {children && <section className="text-sm text-black text-opacity-50">{children}</section>}
+            {children && <section className="text-sm text-black dark:text-current text-opacity-50">{children}</section>}
         </article>
     );
 };
