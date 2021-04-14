@@ -5,6 +5,7 @@ export type InfoItemProps = {
     header: string;
     additional?:string;
     clickable?: boolean;
+    title?: string;
     onClickHandle?: (event?: React.MouseEvent<HTMLElement>) => void;
 };
 

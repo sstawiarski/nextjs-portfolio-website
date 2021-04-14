@@ -3,14 +3,14 @@ import classnames from 'classnames';
 
 import { InfoItemProps } from '../../types/ProfileCard';
 
-const InfoItem: FC<InfoItemProps> = ({ Icon, header, additional = '', clickable = false, onClickHandle = null }) => {
+const InfoItem: FC<InfoItemProps> = ({ Icon, header, additional = '', clickable = false, onClickHandle = null, title = "" }) => {
     const mainClasses = classnames(['flex', 'flex-row', 'flex-wrap', 'text-gray-500', 'space-x-5', 'w-64', 'xl:ml-4', 'dark:text-gray-300'], {
         'cursor-pointer': clickable,
         'cursor-default': !clickable,
     });
 
     return (
-        <div className={mainClasses} onClick={(event) => (onClickHandle ? onClickHandle(event) : null)}>
+        <div title={title} className={mainClasses} onClick={(event) => (onClickHandle ? onClickHandle(event) : null)}>
             <Icon className="fill-current" />
             <span>{header}</span>
             {additional &&
