@@ -6,7 +6,7 @@ const Subsection: React.FC<SubsectionProps> = ({ content, header, bulleted = fal
         <section className="mt-4">
             <span className="font-semibold text-lg">{header}</span>
             {typeof content === "string" && (
-                <p className="mt-2 break-all font-normal text-black dark:text-current text-opacity-70">{content}</p>
+                <p className="mt-2 break-words font-normal text-black dark:text-current text-opacity-70">{content}</p>
             )}
             {Array.isArray(content) && !screenshots && (
                 <ul className={bulleted ? "list-disc ml-8" : "list-none ml-2"}>

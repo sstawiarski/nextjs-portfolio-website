@@ -17,7 +17,7 @@ const config = {
         return config;
     },
     images: {
-        domains: ['206e126d-9f30-4cd7-90d7-80d8d2207339.s3.us-east-2.amazonaws.com']
+        domains: ['206e126d-9f30-4cd7-90d7-80d8d2207339.s3.us-east-2.amazonaws.com', 'i.imgur.com']
     }
 }
 
