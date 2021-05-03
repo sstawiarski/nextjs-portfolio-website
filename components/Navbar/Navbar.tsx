@@ -44,19 +44,19 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
 
             <Link href="/">
                 <a aria-label="Home">
-                    <span className="text-black dark:text-current hidden md:block">Home</span>
+                    <span className="text-black dark:text-current hidden md:block hover:text-blue-900 dark:hover:text-green-500">Home</span>
                 </a>
             </Link>
 
             <Link href="/resume">
                 <a aria-label="Resume">
-                    <span className="text-black dark:text-current hidden md:block">Resume</span>
+                    <span className="text-black dark:text-current hidden md:block hover:text-blue-900 dark:hover:text-green-500">Resume</span>
                 </a>
             </Link>
 
-            <Link href="/">
+            <Link href="/contact">
                 <a aria-label="Contact">
-                    <span className="text-black dark:text-current hidden md:block">Contact</span>
+                    <span className="text-black dark:text-current hidden md:block hover:text-blue-900 dark:hover:text-green-500">Contact</span>
                 </a>
             </Link>
 
@@ -76,7 +76,7 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
                     </a>
                 </Link>
                 <hr className="w-full ml-auto mr-auto" />
-                <Link href="/">
+                <Link href="/contact">
                     <a aria-label="Contact">
                         <span className="text-black dark:text-current block md:hidden py-1">Contact</span>
                     </a>

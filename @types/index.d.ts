@@ -22,6 +22,7 @@ export type ProjectTypes = {
     bullets?: string[];
     screenshots?: string[];
     technical?: TechnicalTypes[];
+    url?: string;
 }
 
 type ListStyle =
@@ -53,4 +54,10 @@ export type FooterItemProps = {
     icon?: string;
     text?: string;
     additional?: string;
+}
+
+export type FormType = {
+    email: string;
+    subject: string;
+    body: string;
 }

@@ -42,6 +42,11 @@ export class Project {
     })
     screenshots: string[];
 
+    @Column({
+        nullable: true
+    })
+    url: string;
+
     @OneToMany(() => Technical, technical => technical.project)
     technical: Technical[];
 }

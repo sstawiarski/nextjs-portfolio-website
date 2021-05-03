@@ -12,9 +12,9 @@ const Resume = () => {
                         <span className="text-xl font-medium">Shawn Stawiarski</span>
                         <span>Software Engineer</span>
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col text-right">
                         <a href="tel:+14122128518" className="hover:text-blue-600 transition-colors">
-                            (412) 212-8518
+                            (412) 212 - 8518
                         </a>
                         <a href="mailto:contact@shawnstawiarski.com" className="hover:text-blue-600 transition-colors">
                             contact@shawnstawiarski.com
@@ -25,17 +25,19 @@ const Resume = () => {
                     </div>
                 </div>
             </header>
+
+            {/* Education */}
             <section className="mt-8 sm:mt-4 ml-4">
                 <span className="font-semibold text-lg">Education</span>
                 <hr />
                 <div className="education-subsection mt-2">
                     <div className="flex flex-row justify-between">
                         <span className="font-semibold text-base">Arizona State University</span>
-                        <span className="font-semibold text-base">January 2018 - Current</span>
+                        <span className="font-semibold text-base">January 2018 - May 2021</span>
                     </div>
                     <div className="flex flex-row justify-between">
                         <span className="text-base">BS in Software Engineering</span>
-                        <span className="text-base">Expected Graduation May 2021</span>
+                        <span className="text-base">GPA: 3.8</span>
                     </div>
                 </div>
                 <div className="education-subsection mt-6">
@@ -48,16 +50,37 @@ const Resume = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Projects */}
             <section className="mt-4 ml-4">
                 <span className="font-semibold text-lg">Projects</span>
                 <hr />
+                
             </section>
+
+            {/* Skills */}
             <section className="mt-4 ml-4">
                 <span className="font-semibold text-lg">Skills</span>
                 <hr />
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-16 mt-10 -mb-6 text-center text-gray-600">
+                <div className="flex justify-between mt-2">
+                    <span className="font-semibold text-base">Languages:</span>
+                    <span>Java, JavaScript, TypeScript, HTML, some C/C++ and CSS</span>
+                </div>
+                <div className="flex justify-between mt-2">
+                    <span className="font-semibold text-base">Libraries / Frameworks:</span>
+                    <span>React.js, Redux, Next.js, Tailwind CSS</span>
+                </div>
+                <div className="flex justify-between mt-2">
+                    <span className="font-semibold text-base">Tools:</span>
+                    <span>Git / GitHub, Travis-CI, Node.js, Express, Passport.js, Mongoose, JDBC</span>
+                </div>
+                <div className="flex justify-between mt-2">
+                    <span className="font-semibold text-base">Databases:</span>
+                    <span>MongoDB, MySQL, PostgreSQL</span>
                 </div>
             </section>
+
+            {/* Work History */}
             <section className="mt-4 ml-4">
                 <span className="font-semibold text-lg">Work History</span>
                 <hr />
