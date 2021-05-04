@@ -22,7 +22,7 @@ const ProfilePicture: FC<ProfilePictureProps> = ({ source }) => {
         'sm:h-24',
         'md:h-44',
         'md:w-44',
-        'mt-2',
+        'mt-auto',
         'md:mt-0',
         'dark:border-gray-300'
     ]);

@@ -24,7 +24,7 @@ const ProjectDetails = ({ project }: InferGetStaticPropsType<typeof getStaticPro
                     )}
                 </div>
 
-                <p className="text-base text-center md:text-left -mt-6 text-black dark:text-current text-opacity-50">
+                <p className="-mt-5 text-sm text-gray-700 dark:text-current">
                     {project?.description}
                 </p>
             </header>

@@ -58,7 +58,7 @@ const Resume: FC = () => {
                     <input
                         id="email"
                         placeholder="johnsmith@example.com"
-                        className="border p-1 mb-2 rounded-sm focus:outline-none focus:ring-2 focus:border-blue-600 dark:focus:border-green-600 dark:bg-gray-800 dark:border-black"
+                        className="border p-1 mb-2 rounded focus:outline-none focus:ring-2 focus:border-blue-600 dark:focus:border-green-600 dark:bg-gray-800 dark:border-black"
                         {...register("email", {
                             required: "Email address is required",
                             pattern: {
@@ -75,7 +75,7 @@ const Resume: FC = () => {
                     <select
                         id="subject"
                         defaultValue="Select a subject"
-                        className="mb-3 dark:text-gray-200 dark:bg-gray-700 focus:outline-none"
+                        className="mb-3 dark:text-gray-400 dark:bg-gray-800 focus:outline-none border dark:border-black rounded"
                         {...register("subject", { validate: (value) => value !== "Select a subject" })}>
                         <option>Select a subject</option>
                         <option>Recruitment</option>
@@ -89,7 +89,7 @@ const Resume: FC = () => {
                     <textarea
                         id="body"
                         placeholder="Enter a message"
-                        className="border p-1 rounded-sm focus:outline-none focus:ring-2 focus:border-blue-600 dark:focus:border-green-600 dark:bg-gray-800 dark:border-black"
+                        className="border p-1 rounded focus:outline-none focus:ring-2 focus:border-blue-600 dark:focus:border-green-600 dark:bg-gray-800 dark:border-black"
                         rows={5}
                         {...register("body", { required: true })}
                     />
