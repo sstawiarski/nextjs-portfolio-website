@@ -11,7 +11,7 @@ const InfoItem: FC<InfoItemProps> = ({ Icon, header, additional = '', clickable 
 
     return (
         <div title={title} className={mainClasses} onClick={(event) => (onClickHandle ? onClickHandle(event) : null)}>
-            <Icon className="fill-current" />
+            <Icon className="fill-current w-6 h-6" />
             <span>{header}</span>
             {additional &&
                 additional.split(' / ').map((part, idx) => {
