@@ -46,7 +46,7 @@ const ProfileCard = ({ children, className }: ProfileCardProps) => {
                     <InfoItem
                         Icon={SchoolIcon}
                         header="Arizona State University"
-                        additional="BS in Software Engineering / 3.8 GPA"
+                        additional="BS in Software Engineering / 3.79 GPA"
                         title="Education history"
                     />
                     <InfoItem
