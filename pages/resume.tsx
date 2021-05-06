@@ -57,6 +57,7 @@ const projects: ResumeProject[] = [
             "Employed AWS Lambda, AWS SES, and AWS API Gateway to implement a serverless email contact form",
         ],
         ext_url: "https://github.com/sstawiarski/nextjs-portfolio-website",
+        url: "/projects/3"
     },
     {
         name: "Distributed P2P Calculator",
