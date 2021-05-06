@@ -9,8 +9,8 @@ import { Project, Technical } from "../models";
 const Home = ({ projects }: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <div className="flex xl:flex-row flex-col w-full justify-between">
-            <ProfileCard className="ml-auto mr-auto mt-5 xl:ml-32 xl:mt-32 xl:mr-10" />
-            <main className="flex flex-col w-11/12 md:w-10/12 xl:w-full ml-auto mr-auto xl:ml-4 xl:mr-0">
+            <ProfileCard className="ml-auto mr-auto mt-5 xl:ml-32 xl:mt-32 xl:mr-10 max-h-96" />
+            <main className="flex flex-col w-11/12 md:w-10/12 xl:w-full ml-auto mr-auto xl:ml-4 xl:mr-0 min-h-screen">
                 <Header header="Projects" />
                 <ProjectList divide={false} projects={projects} />
             </main>
