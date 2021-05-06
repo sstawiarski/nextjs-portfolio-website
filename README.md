@@ -14,7 +14,7 @@ The portfolio is live at [shawnstawiarski.com](https://shawnstawiarski.com). It 
 
 #### Screenshots (dark mode)
 ##### Homepage
-![Homepage](https://206e126d-9f30-4cd7-90d7-80d8d2207339.s3.us-east-2.amazonaws.com/images/readme/contact_form.webp)
+![Homepage](https://206e126d-9f30-4cd7-90d7-80d8d2207339.s3.us-east-2.amazonaws.com/images/readme/home.webp)
 ##### Project Details
 ![Project details](https://206e126d-9f30-4cd7-90d7-80d8d2207339.s3.us-east-2.amazonaws.com/images/readme/project_details.webp)
 ##### Resume
