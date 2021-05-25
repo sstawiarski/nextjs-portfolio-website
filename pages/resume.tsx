@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC } from "react";
 import { useRouter } from "next/router";
 import GitHubIcon from "../public/icons/github.svg";
 
@@ -32,14 +32,15 @@ const projects: ResumeProject[] = [
     {
         name: "Asset Management Dashboard",
         addl: "Capstone Project",
-        subtitle: "Full-stack MERN application with a dashboard for performing CRUD operations on business assets",
+        subtitle: "Full stack MERN dashboard for managing and tracking business assets",
         bullets: [
-            "Created 20+ endpoints of a RESTful API using NodeJS, Express & MongoDB to enable CRUD operations on business assets including complex filtering and sorting using aggregation pipelines",
-            "Implemented 35 modules/components of a single-page application built with React and Material-UI",
-            "Delivered business value by streamlining use cases and developing features to replace manual data input",
-            "Connected regularly with product owner to elicit requirements, demonstrate project progress, and address feedback over the course of 2 semesters",
-            "Helped guide a team of 5 in a collaborative, remote environment using Agile / Scrum process",
-            "Deployed finished project for demonstration purposes using AWS S3 / CloudFront for the frontend, Heroku for the API server, and MongoDB Atlas for the database",
+            "Implemented and documented 20+ endpoints of a RESTful API using Node.js, Express, and Swagger UI",
+            "Designed complex aggregation pipelines to implement filtering, sorting, and location mapping of assets using MongoDB and Mongoose",
+            "Implemented 30+ components of a single-page application built with React and Material-UI",
+            "Deployed finished project demo using AWS S3 / CloudFront, Heroku, and MongoDB Atlas",
+            "Translated verbal wants, needs, and feedback from the product owner to actionable requirements",
+            "Demonstrated finished deliverables to the product owner regularly over the course of the 6 month project",
+            "Led a team of 5 in a collaborative, remote environment using Agile / Scrum SDLC",
         ],
         ext_url: "https://github.com/sstawiarski/SER-401-Project-24",
         url: "/projects/2",
@@ -49,31 +50,33 @@ const projects: ResumeProject[] = [
         subtitle:
             "My personal portfolio website (you're on it right now!), built using Next.js / React, TailwindCSS, and PostgreSQL",
         bullets: [
-            "Created a responsive custom website design using the Tailwind CSS framework",
-            "Utilized TypeScript to develop React components to display profile, project, and resume information",
-            "Deployed a PostgreSQL database using AWS RDS and created TypeORM models for storing content",
-            "Employed data fetching techniques supplied by Next.js to statically generate webpages",
-            "Optimized website performance and SEO using Lighthouse analysis and Next.js features such as static generation, server-side rendering, and image optimization",
-            "Employed AWS Lambda, AWS SES, and AWS API Gateway to implement a serverless email contact form",
+            "Planned and executed a responsive custom website design using the Tailwind CSS framework",
+            "Used TypeScript to develop React components to display profile, project, and resume information",
+            "Architected a PostgreSQL database using TypeORM models and deployed using AWS RDS",
+            "Optimized website performance and SEO using Lighthouse analysis and Next.js features such as static generation, server-side rendering, and image optimization to achieve a Lighthouse score of 100",
+            "Employed Amazon Web Services including Lambda, Simple Email Service (SES), and API Gateway to implement a serverless email contact form",
         ],
         ext_url: "https://github.com/sstawiarski/nextjs-portfolio-website",
-        url: "/projects/3"
+        url: "/projects/3",
     },
     {
-        name: "Distributed P2P Calculator",
-        subtitle: "Multithreaded Java peer-to-peer calculator CLI application",
+        name: "Distributed Peer-to-Peer Chatroom and Calculator",
+        subtitle: "Multithreaded Java application for performing calculations across distributed nodes",
         bullets: [
-            "Designed and implemented leader elections and distributed mathematical calculations",
-            "Used protocol buffers to facilitate peer communication using structured messages",
-            "Ensured fault tolerance by handling communication errors and electing new leaders as necessary",
+            "Managed state and processed input using threads and synchronized methods / locks to avoid race conditions",
+            "Modeled peer communication as structured messages using protocol buffers",
+            "Handled communication errors by electing new leaders as necessary to ensure the fault tolerance of the network",
+            "Developed JUnit tests to verify system functionality and catch errors",
         ],
+        url: "/projects/4",
     },
     {
         name: "Movie Database and CLI Tool",
         subtitle: "Java command line application accessing a MySQL database to perform selected queries on movies",
         bullets: [
-            "Designed relational schema and performed database normalization to ensure database quality and data integrity across 13 tables",
-            "Implemented 22 different queries on the database securely by using PreparedStatements & the JDBC API",
+            "Generated intial ER diagram with 13 tables normalized to 3NF to ensure database integrity",
+            "Constructed 22 queries using the JDBC API to allow users to list, search, and add movies, awards, and directors",
+            "Maintained database security and performance by using PreparedStatements for queries based on user input",
         ],
         url: "/projects/1",
     },
@@ -128,7 +131,7 @@ const Resume: FC = () => {
     const router = useRouter();
 
     return (
-        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10 dark:bg-gray-700">
+        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10 bg-white dark:bg-gray-700">
             <header>
                 <h1 className="text-2xl mb-5 font-bold">Resume</h1>
                 <div className="flex flex-col sm:flex-row text-center sm:text-left w-full sm:justify-between px-4">
@@ -160,7 +163,9 @@ const Resume: FC = () => {
                         <span className="sm:font-semibold text-base">January 2018 - May 2021</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:justify-between">
-                        <span className="text-base italic sm:not-italic">BS in Software Engineering</span>
+                        <span className="text-base italic sm:not-italic">
+                            Bachelor of Science in Software Engineering
+                        </span>
                         <span className="text-base">GPA: 3.79</span>
                     </div>
                 </div>
@@ -170,9 +175,22 @@ const Resume: FC = () => {
                         <span className="sm:font-semibold text-base">September 2015 - June 2017</span>
                     </div>
                     <div className="flex flex-col sm:flex-row sm:justify-between">
-                        <span className="text-base">General Studies</span>
+                        <span className="text-base italic sm:not-italic">General Studies</span>
+                        <span className="text-base">2 years completed</span>
                     </div>
                 </div>
+            </section>
+
+            {/* Skills */}
+            <section className="mt-4 ml-4">
+                <span className="font-semibold text-lg">Skills</span>
+                <hr />
+                {skills.map((skill, idx) => (
+                    <div className="flex flex-col sm:flex-row sm:justify-between mt-2" key={idx}>
+                        <span className="font-semibold text-base">{skill.title}:</span>
+                        <span>{Array.isArray(skill.items) ? skill.items.join(", ") : skill.items}</span>
+                    </div>
+                ))}
             </section>
 
             {/* Projects */}
@@ -218,18 +236,6 @@ const Resume: FC = () => {
                         </div>
                     );
                 })}
-            </section>
-
-            {/* Skills */}
-            <section className="mt-4 ml-4">
-                <span className="font-semibold text-lg">Skills</span>
-                <hr />
-                {skills.map((skill, idx) => (
-                    <div className="flex flex-col sm:flex-row sm:justify-between mt-2" key={idx}>
-                        <span className="font-semibold text-base">{skill.title}:</span>
-                        <span>{Array.isArray(skill.items) ? skill.items.join(", ") : skill.items}</span>
-                    </div>
-                ))}
             </section>
 
             {/* Work History */}
