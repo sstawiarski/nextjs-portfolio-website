@@ -30,7 +30,8 @@ const ProfileCard = ({ children, className }: ProfileCardProps) => {
             "xl:flex-col",
             "flex-wrap",
             "justify-evenly",
-            "dark:bg-gray-700"
+            "dark:bg-gray-700",
+            "bg-white"
         ],
         {
             [className]: Boolean(className),
@@ -39,7 +40,7 @@ const ProfileCard = ({ children, className }: ProfileCardProps) => {
 
     return (
         <aside className={mainClasses}>
-            <ProfilePicture source="/images/profile.jpeg" />
+            <ProfilePicture source="/images/profile.jpg" />
             <div className="sm:mr-0 ml-10 md:ml-0">
                 <ProfileHeader header="Shawn Stawiarski" subtitle="Software Engineer" />
                 <InfoList>

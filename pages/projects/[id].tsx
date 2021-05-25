@@ -13,7 +13,7 @@ type Props = {
 const ProjectDetails = ({ project }: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     return (
-        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10 dark:bg-gray-700">
+        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10 bg-white dark:bg-gray-700">
             <header>
                 <div className="flex justify-between">
                     <h1 className="text-xl mb-5 font-bold">{project?.project_name}</h1>

@@ -45,7 +45,7 @@ const Resume: FC = () => {
     };
 
     return (
-        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10 dark:bg-gray-700">
+        <article className="md:shadow w-11/12 md:w-3/4 rounded mr-auto ml-auto p-4 md:mt-10 bg-white dark:bg-gray-700">
             <header>
                 <h1 className="text-2xl mb-5 font-bold">Contact</h1>
             </header>
@@ -96,7 +96,7 @@ const Resume: FC = () => {
                     {errors?.body && <span className="text-red-800 dark:text-red-500">No message content</span>}
 
                     <button
-                        className="py-2 px-4 mt-3 ml-auto rounded dark:text-gray-200 bg-blue-600 dark:bg-green-600 hover:bg-blue-700 dark:hover:bg-green-600 transition-colors max-w-min"
+                        className="py-2 px-4 mt-3 ml-auto rounded text-white dark:text-gray-200 bg-blue-600 dark:bg-green-600 hover:bg-blue-700 dark:hover:bg-green-600 transition-colors max-w-min"
                         type="submit">
                         Submit
                     </button>

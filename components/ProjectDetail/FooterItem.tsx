@@ -10,15 +10,17 @@ import TypeScriptIcon from "../../public/icons/typescript.svg";
 
 const FooterItem: React.FC<FooterItemProps> = ({ text = "", icon = "", additional = "" }) => {
     const Icon = getIcon(icon);
+    const exclude = ["Amazon Web Services", "Protocol Buffers", "JUnit 4", "Multithreading"];
+
     return (
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between text-black dark:text-current">
             <div className="flex flex-col sm:flex-row items-center  sm:justify-around mb-3">
                 <Icon className="h-7 w-24 fill-current" />
                 {icon !== "MySQL" && icon !== "MongoDB" && icon !== "Next.js" && (
                     <span
                         className={[
                             "font-normal text-lg mt-1",
-                            icon === "Amazon Web Services" ? "" : "sm:-ml-10 lg:-ml-28",
+                            exclude.includes(icon) ? "" : "sm:-ml-10 lg:-ml-28",
                         ].join(" ")}>
                         {text}
                     </span>

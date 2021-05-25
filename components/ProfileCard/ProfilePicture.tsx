@@ -8,7 +8,7 @@ const ProfilePicture: FC<ProfilePictureProps> = ({ source }) => {
     const mainClasses = classnames([
         'border-solid',
         'border-4',
-        'border-gray-100',
+        'border-white',
         'shadow-md',
         'lg:w-52',
         'relative',

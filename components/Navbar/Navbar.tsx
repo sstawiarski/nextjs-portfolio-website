@@ -44,19 +44,19 @@ const Navbar: FC<NavbarProps> = ({ children, className, Logo = null, link = null
 
             <Link href="/">
                 <a aria-label="Home">
-                    <span className="text-black dark:text-current hidden md:block hover:text-blue-900 dark:hover:text-green-500">Home</span>
+                    <span className="text-black dark:text-current hidden md:block hover:text-green-600 dark:hover:text-green-500">Home</span>
                 </a>
             </Link>
 
             <Link href="/resume">
                 <a aria-label="Resume">
-                    <span className="text-black dark:text-current hidden md:block hover:text-blue-900 dark:hover:text-green-500">Resume</span>
+                    <span className="text-black dark:text-current hidden md:block hover:text-green-600 dark:hover:text-green-500">Resume</span>
                 </a>
             </Link>
 
             <Link href="/contact">
                 <a aria-label="Contact">
-                    <span className="text-black dark:text-current hidden md:block hover:text-blue-900 dark:hover:text-green-500">Contact</span>
+                    <span className="text-black dark:text-current hidden md:block hover:text-green-600 dark:hover:text-green-500">Contact</span>
                 </a>
             </Link>
 
