@@ -88,7 +88,7 @@ const workItems: ResumeWorkHistory[] = [
         location: "Canonsburg, PA",
         jobTitle: "Barista",
         startMonth: "July 2017",
-        endMonth: "Current",
+        endMonth: "June 2021",
         company: "Starbucks Coffee Company",
     },
     {

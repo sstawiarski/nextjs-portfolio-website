@@ -9,11 +9,34 @@ const config = {
     },
     webpack: (config) => {
         // extend your webpack configuration here
-        config.module.rules.push({
+/*         config.module.rules.push({
             test: /\.svg$/,
-            use: ['@svgr/webpack']
-        });
-        
+            use: [
+              {
+                loader: '@svgr/webpack',
+                options: {
+                  prettier: false,
+                  svgo: false,
+                  svgoConfig: {
+                    plugins: [{ removeViewBox: false }],
+                  },
+                  titleProp: true,
+                  ref: true,
+                },
+              },
+              {
+                loader: 'file-loader',
+                options: {
+                  name: 'static/media/[name].[hash].[ext]',
+                },
+              },
+            ],
+            issuer: {
+              and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+            },
+          }); */
+
+
         return config;
     },
     images: {
