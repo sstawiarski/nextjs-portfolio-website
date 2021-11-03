@@ -19,7 +19,7 @@ const ProjectDetails = ({ project }: InferGetStaticPropsType<typeof getStaticPro
                     <h1 className="text-xl mb-5 font-bold">{project?.project_name}</h1>
                     {project?.url && (
                         <div className="cursor-pointer" onClick={() => router.push(project?.url)}>
-                            <GitHubIcon className="fill-current" />
+                            <GitHubIcon className="fill-current w-8" />
                         </div>
                     )}
                 </div>
